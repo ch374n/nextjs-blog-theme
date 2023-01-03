@@ -20,12 +20,15 @@ import SEO from '../../components/SEO';
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
 // to handle import statements. Instead, you must include components in scope
 // here.
+import Player from '@vimeo/player';
+
 const components = {
   a: CustomLink,
   // It also works with dynamically-imported components, which is especially
   // useful for conditionally loading components for certain routes.
   // See the notes in README.md for more details.
   Head,
+  Player
 };
 
 export default function PostPage({
