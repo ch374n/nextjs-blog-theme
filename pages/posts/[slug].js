@@ -21,6 +21,7 @@ import SEO from '../../components/SEO';
 // to handle import statements. Instead, you must include components in scope
 // here.
 import Player from '@vimeo/player';
+import { DiscussionEmbed } from 'disqus-react';
 
 const components = {
   a: CustomLink,
@@ -32,12 +33,18 @@ const components = {
 };
 
 export default function PostPage({
+  slug,
   source,
   frontMatter,
   prevPost,
   nextPost,
   globalData,
 }) {
+  const disqusConfig = {
+    shortname: 'swaradaphadnis',
+    config: { identifier: slug, url: `https://demosuites.netlify.app/` + slug },
+  };
+
   return (
     <Layout>
       <SEO
@@ -88,6 +95,7 @@ export default function PostPage({
           )}
         </div>
       </article>
+      <DiscussionEmbed {...disqusConfig} />
       <Footer copyrightText={globalData.footerText} />
       <GradientBackground
         variant="large"
@@ -109,6 +117,7 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     props: {
+      slug: params.slug,
       globalData,
       source: mdxSource,
       frontMatter: data,

@@ -203,6 +203,10 @@ body {
     z-index: 10;
 }
 
+div#disqus_thread {
+    width: 100vh;
+}
+
 @media only screen and (max-width: 600px) {
     audio, canvas, embed, iframe, img, object, svg, video {
         width: 98%;
@@ -219,6 +223,10 @@ body {
         align-items: normal;
     }
 
+    div#disqus_thread {
+        width: 70%;
+        margin-left: 15%;
+    }
 
     #apple, #twitter, #github, #facebook {
         font-size: 3em;
