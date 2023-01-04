@@ -205,6 +205,9 @@ body {
 
 div#disqus_thread {
     width: 100vh;
+    padding: 1rem;
+    background: #202124;
+    border-radius: 1em;
 }
 
 @media only screen and (max-width: 600px) {
@@ -224,8 +227,8 @@ div#disqus_thread {
     }
 
     div#disqus_thread {
-        width: 70%;
-        margin-left: 15%;
+        width: 85%;
+        margin-left: 8%;
     }
 
     #apple, #twitter, #github, #facebook {
@@ -235,5 +238,12 @@ div#disqus_thread {
 
     .footer {
         text-align: center;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 899px) {
+    div#disqus_thread {
+        width: 85%;
+        margin-left: 5%;
     }
 }
